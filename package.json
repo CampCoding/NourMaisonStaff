@@ -52,4 +52,8 @@
   "engines": {
     "node": ">= 22.11.0"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6ff9bb31af131ed0ddc7ebcaf74eb15730ac5f63
