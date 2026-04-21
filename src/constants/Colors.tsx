@@ -1,8 +1,16 @@
 export const Colors = {
   primary: '#dd9933',
+  primaryLight: '#f5c870',
+  primaryDark: '#b87a1f',
   secondary: '#84b067',
-  secondayLight: '#b4d7af',
-  text: '#092442',
+  secondaryLight: '#b4d7af',
+  secondaryDark: '#5a8843',
+  bg: '#faf7f2',
+  surface: '#ffffff',
+  surface2: '#f3ede3',
+  text: '#2c2218',
+  textMuted: '#8a7560',
+  border: 'rgba(221,153,51,0.18)',
   pageColor: '#F9FAFC',
   gray: '#F1F4F9', //gray500
   gray2: '#E5E5E5',
@@ -13,6 +21,12 @@ export const Colors = {
   modalBackground: '#00000080',
   cardPhotoBackground: '#2ecc700d',
   cardPhotoBorderColor: '#2ecc704d',
+  drawerBg: '#faf7f2',
+  drawerSurface: '#ffffff',
+  drawerBorder: 'rgba(221,153,51,0.18)',
+  drawerMuted: '#b87a1f',
+
+  //-------------------------------------------------------------------------------------------------
 
   red: '#FF3B30',
   red2: '#D80027',
@@ -52,7 +66,6 @@ export const Colors = {
   purple100: '#E6D9F2',
   blacks: '#1D1B20',
   base600: '#5E5E6E',
-  border: '#E3E3E3',
   txtcolor: '#4F4F4F',
   dark: '#332D2D',
   bar: '#787880',
