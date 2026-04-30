@@ -8,7 +8,7 @@ import {
   StatusBar,
   Platform,
 } from 'react-native';
-import { Colors } from '../../../constants';
+import { Colors, hp, wp } from '../../../constants';
 import { StatPill } from './components/StatPill';
 import { ShiftDetailCard } from './components/ShiftDetailCard';
 import { RestDayCard } from './components/RestDayCard';
@@ -16,10 +16,7 @@ import { UpcomingStrip } from './components/UpcomingStrip';
 import Header from './components/Header';
 import CalenderView from './components/CalenderView';
 import { useHomeScreen } from './hook';
-import {
-  heightPercentageToDP as hp,
-  widthPercentageToDP as wp,
-} from 'react-native-responsive-screen';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // ─── Main Screen ───────────────────────────────────────────────────────────────
 const MyScheduleScreen: React.FC = () => {
@@ -36,7 +33,7 @@ const MyScheduleScreen: React.FC = () => {
   } = useHomeScreen();
 
   return (
-    <View style={styles.safe}>
+    <SafeAreaView style={styles.safe}>
       <StatusBar barStyle="dark-content" backgroundColor={Colors.bg} />
 
       <Header />
@@ -101,7 +98,7 @@ const MyScheduleScreen: React.FC = () => {
 
         <View style={{ height: hp('4%') }} />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

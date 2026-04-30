@@ -4,7 +4,12 @@ import { formatDuration, getNetWork } from '../../../../utiles/homeUtiles';
 import { useEffect, useRef } from 'react';
 import { Shift } from '../types';
 import { ShiftTimeline } from './ShiftTimeline';
-export const ShiftDetailCard = ({ shift }: { shift: Shift }) => {
+
+type Props = {
+  shift: Shift;
+  showChart?: boolean;
+};
+export const ShiftDetailCard = ({ shift, showChart = true }: Props) => {
   const slideAnim = useRef(new Animated.Value(hp('2.46%'))).current;
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
@@ -34,15 +39,19 @@ export const ShiftDetailCard = ({ shift }: { shift: Shift }) => {
     <Animated.View
       style={[
         sdStyles.card,
+        showChart ? sdStyles.show : {},
         { opacity: fadeAnim, transform: [{ translateY: slideAnim }] },
       ]}
     >
-      <View style={sdStyles.timelineSection}>
-        <Text style={sdStyles.sectionLabel}>Your Shift</Text>
-        <ShiftTimeline shift={shift} />
-      </View>
-
-      <View style={sdStyles.divider} />
+      {showChart && (
+        <>
+          <View style={sdStyles.timelineSection}>
+            <Text style={sdStyles.sectionLabel}>Your Shift</Text>
+            <ShiftTimeline shift={shift} />
+          </View>
+          <View style={sdStyles.divider} />
+        </>
+      )}
 
       <View style={sdStyles.blocksRow}>
         <View style={[sdStyles.block, sdStyles.workBlock]}>
@@ -116,6 +125,8 @@ const sdStyles = StyleSheet.create({
     borderRadius: wp('5.33%'),
     marginHorizontal: wp('4.27%'),
     marginBottom: hp('1.48%'),
+  },
+  show: {
     paddingTop: hp('2.46%'),
     paddingBottom: hp('1.97%'),
     paddingHorizontal: wp('4.27%'),

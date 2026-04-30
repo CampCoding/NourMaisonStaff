@@ -2,6 +2,7 @@ import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import MainStack from './src/navigation/MainStack';
+import { Colors } from './src/constants';
 
 function App() {
   // const isDarkMode = useColorScheme() === 'dark';
@@ -11,7 +12,7 @@ function App() {
     // <PersistGate loading={null} persistor={persistor}>
     <SafeAreaProvider>
       {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} /> */}
-      <StatusBar backgroundColor={'white'} barStyle={'light-content'} />
+      <StatusBar barStyle="dark-content" backgroundColor={Colors.bg} />
 
       <NavigationContainer>
         <MainStack />
@@ -21,6 +22,5 @@ function App() {
     // </Provider>
   );
 }
-
 
 export default App;

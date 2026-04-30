@@ -30,7 +30,7 @@ export default function MyDrawer() {
         <Drawer.Screen
           key={item.name}
           name={item.name}
-          component={HomeScreen}
+          component={item.component}
           options={{
             title: item.label,
             headerStyle: {

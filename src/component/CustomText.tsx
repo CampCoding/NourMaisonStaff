@@ -42,7 +42,7 @@ export const CustomText = ({
 export const styles = StyleSheet.create({
   baseText: {
     fontFamily: Fonts.Regular,
-    color: Colors.black,
+    color: 'black',
     textAlign: 'left',
   },
   iosText: {
